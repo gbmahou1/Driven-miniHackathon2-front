@@ -1,10 +1,20 @@
-import styled from 'styled-components';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import axios from 'axios';
 
 export default function TopicPage() {
     const {id} = useParams();
     const navigate = useNavigate();
-    const test = 'https://www.youtube.com/watch?v=0XzMwv8a-Cw&list=PLNG6I1M7eOuzh8F7lcqsSULKkGC-JSdtm&index=4';
+    const [video, setVideo] = useState();
+
+    useEffect(() => {
+        async function getVideos() {
+            const response = await axios.get(`https://localhost:5000/videos/${id}`);
+            setVideo(response.data);
+        }
+        getVideos();
+    }, []);
 
     return (
         <Container>
@@ -14,7 +24,7 @@ export default function TopicPage() {
                 </TitleBox>
                 <Video>
                     <iframe width='500' height='400' 
-                        src={test}>
+                        src={video}>
                     </iframe>
                 </Video>
                 <Quiz onClick={() => navigate(`/questions/${id}`)}>
