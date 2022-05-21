@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+import {useNavigate} from 'react-router-dom';
 
 export default function TopicPage() {
     const test = 'https://www.youtube.com/watch?v=0XzMwv8a-Cw&list=PLNG6I1M7eOuzh8F7lcqsSULKkGC-JSdtm&index=4';
-    
+    const navigate = useNavigate();
+
     return (
         <Container>
             <Body>
@@ -14,7 +16,7 @@ export default function TopicPage() {
                         src={test}>
                     </iframe>
                 </Video>
-                <Quiz>
+                <Quiz onClick={() => navigate('/questions')}>
                     PRATICAR
                 </Quiz>
             </Body>
