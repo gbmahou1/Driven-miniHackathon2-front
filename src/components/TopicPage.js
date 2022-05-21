@@ -1,11 +1,16 @@
 import styled from 'styled-components';
+<<<<<<< HEAD:src/routes/TopicPage.js
+import {useNavigate} from 'react-router-dom';
+=======
 import { useNavigate, useParams } from 'react-router-dom';
+>>>>>>> b7fe5fef32342a1558658e539d0d7deb036aa0cb:src/components/TopicPage.js
 
 export default function TopicPage() {
     const {id} = useParams();
     const navigate = useNavigate();
     const test = 'https://www.youtube.com/watch?v=0XzMwv8a-Cw&list=PLNG6I1M7eOuzh8F7lcqsSULKkGC-JSdtm&index=4';
-    
+    const navigate = useNavigate();
+
     return (
         <Container>
             <Body>
@@ -17,7 +22,11 @@ export default function TopicPage() {
                         src={test}>
                     </iframe>
                 </Video>
+<<<<<<< HEAD:src/routes/TopicPage.js
+                <Quiz onClick={() => navigate('/questions')}>
+=======
                 <Quiz onClick={() => navigate(`/questions/${id}`)}>
+>>>>>>> b7fe5fef32342a1558658e539d0d7deb036aa0cb:src/components/TopicPage.js
                     PRATICAR
                 </Quiz>
             </Body>
