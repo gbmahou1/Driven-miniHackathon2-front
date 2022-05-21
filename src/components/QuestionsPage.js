@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
-export default function QuestionsPage()
-{
+export default function QuestionsPage(){
     return (
         <Container>
             <Body>
@@ -27,7 +26,6 @@ export default function QuestionsPage()
         </Container>
     )
 }
-
 
 const Body = styled.div`
 	position: absolute;
