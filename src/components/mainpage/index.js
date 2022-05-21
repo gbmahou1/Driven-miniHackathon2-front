@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export default function MainPage()
 {
@@ -11,27 +12,35 @@ export default function MainPage()
                 <TopicTitle>
                     [1] Velocidade
                 </TopicTitle>
+                <Link to="assunto/1">
                 <ContentBox>
                         Estude esse tópico! ->
                 </ContentBox>
+                </Link>
                 <TopicTitle>
                     [2] Força
                 </TopicTitle>
+                <Link to="assunto/2">
                 <ContentBox>
                         Estude esse tópico! ->
                 </ContentBox>
+                </Link>
                 <TopicTitle>
                     [3] Movimento Variado
                 </TopicTitle>
+                <Link to="assunto/3">
                 <ContentBox>
                         Estude esse tópico! ->
                 </ContentBox>
+                </Link>
                 <TopicTitle>
                     [4] Encontro de Partículas
                 </TopicTitle>
+                <Link to="assunto/4">
                 <ContentBox>
                         Estude esse tópico! ->
                 </ContentBox>
+                </Link>
             </Body>
         </Container>
     )
@@ -90,4 +99,5 @@ const ContentBox = styled.div`
     margin-top: 20px;
     line-height: 100px;
     text-align: center;
+    text-decoration: none;
 `;
